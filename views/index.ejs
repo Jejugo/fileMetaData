@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<!-- BOOTSTRAP CSS FILES -->
+		<link rel="stylesheet" href="/assets/bootstrap-3.3-1.7-dist/css/bootstrap.min.css">
+		
+		<title>Send File</title>
+	</head>
+	<body>
+		<form action="/upload" method="post" enctype="multipart/form-data">
+			<input type="file" id="file" name="file">
+			<input type="submit">
+		</form>
+		<button class="btn-default btn-primary retrieve" style="padding: 10px; font-size: 20px">Retrieve Img</button>
+		<div class="container">
+			<div class="col-lg-4">
+				<img class="img-responsive imgSrc">
+			</div>
+			<p id="pathValue"></p>
+		</div>
+	</body>
+	<script>
+		$(document).ready(function(){
+			//$("#pathValue").html("o path value é <%=path%>");
+			$("img").attr('src', '<%=path%>');
+		});
+	</script>
+</html>
